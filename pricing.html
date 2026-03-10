@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lesson Pricing | Jamie Barry Music</title>
+  <title>Services | Jamie Barry Music</title>
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{--bg:#1c1e22;--bg2:#22252b;--bg3:#282c33;--card:#31353e;--border:rgba(255,255,255,0.08);--white:#ffffff;--off:#e8eaed;--muted:#9aa0ad;--faint:#636b78;--green:#4caf82;--blue:#4a90d9;--amber:#e8a84a;--fd:'Special Elite',cursive;--fm:'Courier Prime',monospace;--ft:'Share Tech Mono',monospace;}
     html{scroll-behavior:smooth;}
-    body{background:var(--bg);color:var(--off);font-family:var(--fm);font-size:16px;line-height:1.7;overflow-x:hidden;}
+    body{background:var(--bg);color:var(--off);font-family:var(--fm);font-size:18px;line-height:1.7;overflow-x:hidden;}
     nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:15px 52px;background:rgba(28,30,34,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
     .nav-logo{font-family:var(--fd);font-size:1.18rem;color:var(--white);text-decoration:none;}
     .nav-logo span{color:var(--green);}
@@ -46,7 +46,7 @@
     .rate-note{font-family:var(--ft);font-size:0.72rem;letter-spacing:0.1em;opacity:0.75;}
 
     /* CARDS */
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:48px;}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:48px;max-width:800px;}
     .card{background:var(--card);border:1.5px solid var(--border);border-radius:8px;padding:36px 30px;border-top:4px solid transparent;transition:border-top-color 0.2s,transform 0.2s,box-shadow 0.2s;}
     .card:hover{border-top-color:var(--green);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.3);}
     .card.feat{background:#2a3540;border-color:rgba(76,175,130,0.3);border-top-color:var(--green);}
@@ -61,23 +61,13 @@
     .btn-outline{font-family:var(--ft);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;background:transparent;color:var(--off);border:1.5px solid rgba(255,255,255,0.2);padding:11px 22px;cursor:pointer;text-decoration:none;display:inline-block;border-radius:3px;transition:all 0.2s;}
     .btn-outline:hover{border-color:var(--green);color:var(--green);}
 
-    /* INSTRUMENTS COMPARE */
-    .icmp{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px;}
-    .icmp-card{background:var(--card);border:1.5px solid var(--border);border-radius:8px;padding:36px 32px;display:flex;flex-direction:column;gap:10px;}
-    .icmp-card:hover{border-color:var(--green);}
-    .icmp-icon{font-size:2.4rem;}
-    .icmp-name{font-family:var(--fd);font-size:1.6rem;color:var(--white);}
-    .icmp-desc{font-family:var(--fm);font-size:0.88rem;color:var(--muted);line-height:1.75;}
-    .icmp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
-    .ictag{font-family:var(--ft);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;background:rgba(76,175,130,0.1);color:var(--green);border:1px solid rgba(76,175,130,0.3);padding:4px 10px;border-radius:20px;}
-
     /* FAQ */
     .faq{display:flex;flex-direction:column;gap:2px;}
     .faq-item{background:var(--card);border:1px solid var(--border);}
     .faq-q{font-family:var(--fd);font-size:1.05rem;color:var(--white);padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;}
     .faq-q:hover{color:var(--green);}
     .faq-arrow{font-family:var(--ft);font-size:0.8rem;color:var(--green);transition:transform 0.25s;}
-    .faq-a{font-family:var(--fm);font-size:0.9rem;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s;}
+    .faq-a{font-family:var(--fm);font-size:1rem;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s;}
     .faq-item.open .faq-a{max-height:200px;padding:0 24px 20px;}
     .faq-item.open .faq-arrow{transform:rotate(180deg);}
 
@@ -98,7 +88,7 @@
   <a href="index.html" class="nav-logo">Jamie Barry <span>Music</span></a>
   <ul class="nav-links">
     <li><a href="index.html#pick">Instruments</a></li>
-    <li><a href="pricing.html" style="color:var(--green);">Pricing</a></li>
+    <li><a href="pricing.html" style="color:var(--green);">Services</a></li>
     <li><a href="index.html#online">Online Lessons</a></li>
     <li><a href="index.html#ebooks">Practice Routines</a></li>
     <li><a href="about.html">About / CV</a></li>
@@ -107,9 +97,9 @@
 </nav>
 
 <div class="page-hero">
-  <div class="breadcrumb"><a href="index.html">Home</a> / Pricing</div>
-  <h1 class="ph2">Lesson <span>Pricing</span></h1>
-  <p class="psub">Simple, transparent rates. No hidden fees, no packages required — just great lessons at a fair price.</p>
+  <div class="breadcrumb"><a href="index.html">Home</a> / Services</div>
+  <h1 class="ph2">Our <span>Services</span></h1>
+
 </div>
 
 <div class="rate-banner">
@@ -127,23 +117,10 @@
     <div class="sl">Lesson Types</div>
     <h2>Pick what works for you</h2>
     <div class="dv"></div>
-    <div class="cards">
-      <div class="card">
-        <h3>Trial Lesson</h3>
-        <div class="ctag">First-Time Students</div>
-        <div class="cprice">$40</div>
-        <div class="cunit">/ 45 minutes</div>
-        <ul class="clist">
-          <li>Introductory session</li>
-          <li>Skill &amp; goals assessment</li>
-          <li>No commitment required</li>
-          <li>Guitar or drums</li>
-        </ul>
-        <a href="inquiry.html" class="btn-outline">Get Started</a>
-      </div>
+    <div class="cards" style="margin:0 auto 48px;">
       <div class="card feat">
-        <div class="cbadge">Most Popular</div>
-        <h3>In-Person Lessons</h3>
+        <div class="cbadge">In-Person</div>
+        <h3>Studio Lessons</h3>
         <div class="ctag">Studio · Erving, MA</div>
         <div class="cprice">$40</div>
         <div class="cunit">/ 45 minutes</div>
@@ -169,35 +146,11 @@
         <a href="inquiry.html" class="btn-outline">Book Online</a>
       </div>
     </div>
-    <p style="font-family:var(--ft);font-size:0.68rem;letter-spacing:0.08em;color:var(--faint);text-align:center;">* Reach out to discuss package deals or longer session options.</p>
+    <p style="font-family:var(--ft);font-size:0.78rem;letter-spacing:0.08em;color:var(--faint);text-align:center;">* Reach out to discuss package deals or longer session options.</p>
   </div>
 </section>
 
-<section class="sec" style="background:var(--bg);">
-  <div class="si reveal">
-    <div class="sl">Instruments</div>
-    <h2>Guitar &amp; Drums</h2>
-    <div class="dv"></div>
-    <div class="icmp">
-      <div class="icmp-card">
-        <div class="icmp-icon">🎸</div>
-        <div class="icmp-name">Guitar</div>
-        <p class="icmp-desc">Acoustic or electric, beginner or advancing — lessons are entirely tailored to your playing style and personal goals. We'll work through technique, theory, songs you actually want to play, and more.</p>
-        <div class="icmp-tags">
-          <span class="ictag">Acoustic</span><span class="ictag">Electric</span><span class="ictag">Beginner–Advanced</span><span class="ictag">Theory</span><span class="ictag">Songwriting</span>
-        </div>
-      </div>
-      <div class="icmp-card">
-        <div class="icmp-icon">🥁</div>
-        <div class="icmp-name">Drums</div>
-        <p class="icmp-desc">Whether you've never sat behind a kit or you're looking to sharpen your technique, drum lessons with Jamie focus on feel, groove, and real musical context — not just exercises.</p>
-        <div class="icmp-tags">
-          <span class="ictag">Full Kit</span><span class="ictag">Rudiments</span><span class="ictag">Groove &amp; Feel</span><span class="ictag">Rock / Jazz / Pop</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section class="sec" style="background:var(--bg3);">
   <div class="si reveal">
@@ -211,11 +164,11 @@
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggle(this)">What age groups do you teach? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a">All ages — from young beginners (typically 7+) to adults returning to music after years away. Lessons are always paced and structured for the individual student.</div>
+        <div class="faq-a">13 years old is the ideal starting age for full 45-minute sessions. For younger students, reach out to discuss shorter lesson formats and adjusted pricing that works better for their attention span and development.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggle(this)">How do I pay for lessons? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a">Payment details will be confirmed when you book. Common options include cash, Venmo, and other digital payments — just ask when you get in touch.</div>
+        <div class="faq-a">Payment is due at the end of each lesson. All forms of payment are accepted — Venmo, check, or cash are the most convenient.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggle(this)">What's your cancellation policy? <span class="faq-arrow">▾</span></div>
@@ -243,7 +196,7 @@
 <footer>
   <a href="index.html" class="flogo">Jamie Barry <span>Music</span></a>
   <ul class="flinks">
-    <li><a href="pricing.html">Pricing</a></li><li><a href="reviews.html">Reviews</a></li>
+    <li><a href="pricing.html">Services</a></li><li><a href="reviews.html">Reviews</a></li>
     <li><a href="inquiry.html">Book a Lesson</a></li><li><a href="about.html">About / CV</a></li>
     <li><a href="new-student.html">New Student Form</a></li>
   </ul>
