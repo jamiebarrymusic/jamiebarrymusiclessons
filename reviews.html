@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Reviews | Jamie Barry Music</title>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--bg:#1c1e22;--bg2:#22252b;--bg3:#282c33;--card:#31353e;--border:rgba(255,255,255,0.08);--white:#fff;--off:#e8eaed;--muted:#9aa0ad;--faint:#636b78;--green:#4caf82;--amber:#e8a84a;--fd:'Special Elite',cursive;--fm:'Courier Prime',monospace;--ft:'Share Tech Mono',monospace;}
+    html{scroll-behavior:smooth;}body{background:var(--bg);color:var(--off);font-family:var(--fm);font-size:16px;line-height:1.7;overflow-x:hidden;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:15px 52px;background:rgba(28,30,34,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+    .nav-logo{font-family:var(--fd);font-size:1.18rem;color:var(--white);text-decoration:none;}.nav-logo span{color:var(--green);}
+    .nav-links{display:flex;gap:26px;list-style:none;align-items:center;}
+    .nav-links a{font-family:var(--ft);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--white);}
+    .nav-cta{color:var(--bg)!important;background:var(--green)!important;padding:8px 18px;border-radius:3px;font-weight:bold;}
+    .nav-cta:hover{background:#5dd49a!important;}
+    .page-hero{padding:130px 52px 70px;background:var(--bg);position:relative;overflow:hidden;}
+    .page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(232,168,74,0.07),transparent 60%);pointer-events:none;}
+    .breadcrumb{font-family:var(--ft);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint);margin-bottom:16px;}
+    .breadcrumb a{color:var(--green);text-decoration:none;}
+    .ph2{font-family:var(--fd);font-size:clamp(2.2rem,5vw,4rem);color:var(--white);line-height:1.1;margin-bottom:16px;}
+    .ph2 span{color:var(--amber);}
+    .psub{font-family:var(--fm);font-size:1rem;color:var(--muted);max-width:560px;line-height:1.85;}
+    .stats-bar{background:var(--bg3);padding:40px 52px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+    .stats-inner{max-width:800px;margin:0 auto;display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:24px;}
+    .stat-num{font-family:var(--fd);font-size:3rem;color:var(--amber);line-height:1;display:block;}
+    .stat-lbl{font-family:var(--ft);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+    .stat-stars{color:var(--amber);font-size:1.1rem;letter-spacing:0.08em;}
+    .sec{padding:80px 52px;}
+    .si{max-width:1100px;margin:0 auto;}
+    .sl{font-family:var(--ft);font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+    .sl::before{content:'//';opacity:0.4;}
+    h2{font-family:var(--fd);font-size:clamp(1.8rem,3vw,2.6rem);color:var(--white);margin-bottom:16px;line-height:1.15;}
+    .dv{width:36px;height:3px;background:var(--amber);margin-bottom:44px;}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+    .rcard{background:var(--card);border:1.5px solid var(--border);border-radius:8px;padding:30px 26px;position:relative;transition:box-shadow 0.2s,border-color 0.2s;}
+    .rcard:hover{box-shadow:0 10px 32px rgba(0,0,0,0.3);border-color:rgba(232,168,74,0.3);}
+    .rcard::before{content:'"';font-family:var(--fd);font-size:4.5rem;color:rgba(232,168,74,0.15);position:absolute;top:6px;left:18px;line-height:1;}
+    .stars{color:var(--amber);font-size:0.78rem;letter-spacing:0.1em;margin-bottom:8px;}
+    .rtext{font-family:var(--fm);font-style:italic;font-size:0.92rem;color:var(--muted);line-height:1.8;margin-bottom:20px;padding-top:14px;}
+    .rauthor{font-family:var(--ft);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);}
+    .rrole{font-family:var(--ft);font-size:0.64rem;letter-spacing:0.08em;color:var(--faint);}
+    .rcard.lg{grid-column:span 2;}
+    .rcard.lg .rtext{font-size:1rem;}
+    .btn{font-family:var(--ft);font-size:0.76rem;letter-spacing:0.12em;text-transform:uppercase;padding:13px 28px;border-radius:3px;text-decoration:none;display:inline-block;cursor:pointer;border:none;transition:all 0.2s;}
+    .btn-green{background:var(--green);color:var(--bg);}
+    .btn-green:hover{background:#5dd49a;transform:translateY(-2px);}
+    .btn-ghost{background:transparent;color:var(--off);border:1.5px solid rgba(255,255,255,0.2);}
+    .btn-ghost:hover{border-color:var(--green);color:var(--green);}
+    footer{background:#141618;color:var(--faint);padding:32px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;border-top:1px solid var(--border);}
+    .flogo{font-family:var(--fd);font-size:1.05rem;color:var(--white);text-decoration:none;}.flogo span{color:var(--green);}
+    .flinks{display:flex;gap:20px;list-style:none;flex-wrap:wrap;}
+    .flinks a{font-family:var(--ft);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);text-decoration:none;transition:color 0.2s;}
+    .flinks a:hover{color:var(--green);}
+    .fcopy{font-family:var(--ft);font-size:0.61rem;}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    @media(max-width:960px){nav{padding:13px 20px;}.nav-links{display:none;}.page-hero,.sec{padding:80px 20px 60px;}.stats-bar{padding:32px 20px;}.grid3,.grid2{grid-template-columns:1fr;}.rcard.lg{grid-column:span 1;}footer{flex-direction:column;text-align:center;}.flinks{justify-content:center;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Jamie Barry <span>Music</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#pick">Instruments</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="index.html#online">Online Lessons</a></li>
+    <li><a href="index.html#ebooks">Practice Routines</a></li>
+    <li><a href="about.html">About / CV</a></li>
+    <li><a href="inquiry.html" class="nav-cta">Book a Lesson</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Reviews</div>
+  <h1 class="ph2">Student <span>Reviews</span></h1>
+  <p class="psub">Real feedback from students and parents across Western Massachusetts and beyond.</p>
+</div>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div style="text-align:center;"><span class="stat-num">5.0</span><div class="stat-stars">★★★★★</div><div class="stat-lbl">Average Rating</div></div>
+    <div style="text-align:center;"><span class="stat-num">200+</span><div class="stat-lbl">Students Taught</div></div>
+    <div style="text-align:center;"><span class="stat-num">10+</span><div class="stat-lbl">Years Teaching</div></div>
+    <div style="text-align:center;"><span class="stat-num">All Ages</span><div class="stat-lbl">7 to Adult</div></div>
+  </div>
+</div>
+
+<section class="sec" style="background:var(--bg2);">
+  <div class="si">
+    <div class="sl reveal">Guitar Students</div>
+    <h2 class="reveal">What guitar students say</h2>
+    <div class="dv reveal"></div>
+    <div class="grid3 reveal">
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p class="rtext">Jamie is an incredible teacher. I went from knowing nothing to playing my first full song in under a month. The lessons are relaxed but really focused — I always leave feeling like I've genuinely accomplished something.</p>
+        <div class="rauthor">Sarah M.</div><div class="rrole">Guitar Student · Age 34</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p class="rtext">I picked up guitar again after 20 years away. Jamie was patient, encouraging, and helped me rebuild my skills faster than I expected. The personalized approach makes all the difference.</p>
+        <div class="rauthor">Linda K.</div><div class="rrole">Guitar Student · Adult Returner</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p class="rtext">Great teacher who really listens to what you want to work on. I came in wanting to learn specific songs and Jamie figured out exactly what technique I needed to get there. Really efficient use of lesson time.</p>
+        <div class="rauthor">Marcus T.</div><div class="rrole">Guitar Student · Age 28</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg);">
+  <div class="si">
+    <div class="sl reveal">Drum Students</div>
+    <h2 class="reveal">What drum students say</h2>
+    <div class="dv reveal"></div>
+    <div class="grid2 reveal">
+      <div class="rcard lg">
+        <div class="stars">★★★★★</div>
+        <p class="rtext">My son has been taking drum lessons with Jamie for six months and the change in his confidence is incredible. Jamie has a real gift for connecting with younger students and making every single session fun. He comes home buzzing every week.</p>
+        <div class="rauthor">Tom R.</div><div class="rrole">Parent of Student · Age 11</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p class="rtext">I'd played guitar for years but always wanted to try drums. Jamie made the transition feel totally natural. He focused on my musical instincts rather than just drilling exercises.</p>
+        <div class="rauthor">Devon H.</div><div class="rrole">Drums Student · Age 22</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p class="rtext">Jamie's teaching style is calm and encouraging, even when I was struggling with timing. Never felt frustrated, always felt like I was making progress.</p>
+        <div class="rauthor">Carla N.</div><div class="rrole">Drums Student · Age 40</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg3);">
+  <div class="si">
+    <div class="sl reveal">Online Lessons</div>
+    <h2 class="reveal">Remote students</h2>
+    <div class="dv reveal"></div>
+    <div class="grid3 reveal">
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p class="rtext">I was skeptical about online lessons but it works remarkably well. Jamie is great at pointing out what I'm doing wrong even through a screen, and the flexibility fits my schedule perfectly.</p>
+        <div class="rauthor">Rachel B.</div><div class="rrole">Online Guitar Student</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p class="rtext">I live 2 hours from Erving so online was the only realistic option. Honestly just as good as in-person — maybe even better because I'm in my own space and feel more relaxed.</p>
+        <div class="rauthor">James F.</div><div class="rrole">Online Guitar Student</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p class="rtext">The video quality and interaction is seamless. Jamie comes prepared with material and always adapts on the fly to what I need that day. Highly recommended.</p>
+        <div class="rauthor">Priya S.</div><div class="rrole">Online Drums Student</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg2);text-align:center;">
+  <div class="si">
+    <h2 style="margin-bottom:14px;">Ready to write your own review?</h2>
+    <p style="font-family:var(--fm);color:var(--muted);font-size:0.97rem;margin-bottom:36px;max-width:480px;margin-left:auto;margin-right:auto;">Book a trial lesson and see what all the fuss is about.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="inquiry.html" class="btn btn-green">Book a Lesson</a>
+      <a href="pricing.html" class="btn btn-ghost">View Pricing</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="flogo">Jamie Barry <span>Music</span></a>
+  <ul class="flinks">
+    <li><a href="pricing.html">Pricing</a></li><li><a href="reviews.html">Reviews</a></li>
+    <li><a href="inquiry.html">Book a Lesson</a></li><li><a href="about.html">About / CV</a></li>
+    <li><a href="new-student.html">New Student Form</a></li>
+  </ul>
+  <span class="fcopy">© 2026 Jamie Barry Music · Erving, MA</span>
+</footer>
+<script>
+  const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target);}});},{threshold:0.07});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

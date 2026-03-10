@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Lesson | Jamie Barry Music</title>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--bg:#1c1e22;--bg2:#22252b;--bg3:#282c33;--card:#31353e;--border:rgba(255,255,255,0.08);--white:#fff;--off:#e8eaed;--muted:#9aa0ad;--faint:#636b78;--green:#4caf82;--blue:#4a90d9;--amber:#e8a84a;--fd:'Special Elite',cursive;--fm:'Courier Prime',monospace;--ft:'Share Tech Mono',monospace;}
+    html{scroll-behavior:smooth;}body{background:var(--bg);color:var(--off);font-family:var(--fm);font-size:16px;line-height:1.7;overflow-x:hidden;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:15px 52px;background:rgba(28,30,34,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+    .nav-logo{font-family:var(--fd);font-size:1.18rem;color:var(--white);text-decoration:none;}.nav-logo span{color:var(--green);}
+    .nav-links{display:flex;gap:26px;list-style:none;align-items:center;}
+    .nav-links a{font-family:var(--ft);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--white);}
+    .nav-cta{color:var(--bg)!important;background:var(--green)!important;padding:8px 18px;border-radius:3px;font-weight:bold;}
+    .page-hero{padding:130px 52px 70px;background:var(--bg);position:relative;overflow:hidden;}
+    .page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(76,175,130,0.08),transparent 60%);pointer-events:none;}
+    .breadcrumb{font-family:var(--ft);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint);margin-bottom:16px;}
+    .breadcrumb a{color:var(--green);text-decoration:none;}
+    .ph2{font-family:var(--fd);font-size:clamp(2.2rem,5vw,4rem);color:var(--white);line-height:1.1;margin-bottom:16px;}
+    .ph2 span{color:var(--green);}
+    .psub{font-family:var(--fm);font-size:1rem;color:var(--muted);max-width:560px;line-height:1.85;}
+    .main{padding:70px 52px 90px;background:var(--bg2);}
+    .main-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start;}
+    .info-col h3{font-family:var(--fd);font-size:1.5rem;color:var(--white);margin-bottom:14px;}
+    .info-col p{font-family:var(--fm);font-size:0.93rem;color:var(--muted);line-height:1.85;margin-bottom:28px;}
+    .dlist{display:flex;flex-direction:column;gap:16px;margin-bottom:36px;}
+    .ditem{display:flex;align-items:flex-start;gap:14px;}
+    .dibox{font-family:var(--ft);font-size:0.58rem;letter-spacing:0.08em;color:var(--green);border:1px solid var(--green);padding:5px 8px;min-width:44px;text-align:center;border-radius:2px;flex-shrink:0;}
+    .dilbl{font-family:var(--ft);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);}
+    .ditxt{font-family:var(--fm);font-size:0.9rem;color:var(--muted);line-height:1.6;}
+    .nsl{display:inline-flex;align-items:center;gap:8px;font-family:var(--ft);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);text-decoration:none;border:1.5px solid var(--green);padding:11px 20px;border-radius:3px;transition:background 0.2s,color 0.2s;}
+    .nsl:hover{background:var(--green);color:var(--bg);}
+    .nsl::after{content:'→';}
+    .form-wrap{background:var(--card);border:1.5px solid var(--border);border-radius:8px;padding:44px 40px;}
+    .ft2{font-family:var(--fd);font-size:1.5rem;color:var(--white);margin-bottom:28px;}
+    .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .fg{margin-bottom:14px;display:flex;flex-direction:column;gap:5px;}
+    label{font-family:var(--ft);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+    input,select,textarea{font-family:var(--fm);font-size:0.9rem;color:var(--off);background:var(--bg3);border:1.5px solid var(--border);padding:11px 14px;outline:none;transition:border-color 0.2s;width:100%;border-radius:3px;}
+    input:focus,select:focus,textarea:focus{border-color:var(--green);background:var(--bg2);}
+    textarea{min-height:100px;resize:vertical;}
+    .fsub{width:100%;font-family:var(--ft);font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;background:var(--green);color:var(--bg);border:none;padding:16px;cursor:pointer;border-radius:3px;transition:background 0.2s;margin-top:6px;font-weight:bold;}
+    .fsub:hover{background:#5dd49a;}
+    .success{display:none;background:rgba(76,175,130,0.1);border:1.5px solid var(--green);border-radius:6px;padding:28px 24px;text-align:center;margin-top:16px;}
+    .success h4{font-family:var(--fd);font-size:1.3rem;color:var(--green);margin-bottom:8px;}
+    .success p{font-family:var(--fm);font-size:0.9rem;color:var(--muted);}
+    .mini-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:60px;}
+    .mcard{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:22px 20px;text-decoration:none;transition:border-color 0.2s;}
+    .mcard:hover{border-color:var(--green);}
+    .mcard-icon{font-size:1.5rem;margin-bottom:10px;}
+    .mcard-title{font-family:var(--fd);font-size:1rem;color:var(--white);margin-bottom:4px;}
+    .mcard-desc{font-family:var(--ft);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);}
+    footer{background:#141618;color:var(--faint);padding:32px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;border-top:1px solid var(--border);}
+    .flogo{font-family:var(--fd);font-size:1.05rem;color:var(--white);text-decoration:none;}.flogo span{color:var(--green);}
+    .flinks{display:flex;gap:20px;list-style:none;flex-wrap:wrap;}
+    .flinks a{font-family:var(--ft);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);text-decoration:none;transition:color 0.2s;}
+    .flinks a:hover{color:var(--green);}
+    .fcopy{font-family:var(--ft);font-size:0.61rem;}
+    @media(max-width:960px){nav{padding:13px 20px;}.nav-links{display:none;}.page-hero,.main{padding:80px 20px 60px;}.main-inner{grid-template-columns:1fr;gap:48px;}.frow{grid-template-columns:1fr;}.mini-cards{grid-template-columns:1fr;}footer{flex-direction:column;text-align:center;}.flinks{justify-content:center;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Jamie Barry <span>Music</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#pick">Instruments</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="index.html#online">Online Lessons</a></li>
+    <li><a href="index.html#ebooks">Practice Routines</a></li>
+    <li><a href="about.html">About / CV</a></li>
+    <li><a href="inquiry.html" class="nav-cta" style="color:var(--bg)!important;">Book a Lesson</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Book a Lesson</div>
+  <h1 class="ph2">Book a <span>Lesson</span></h1>
+  <p class="psub">Fill out the form and Jamie will be in touch within 24 hours to confirm your first session.</p>
+</div>
+
+<div class="main">
+  <div class="main-inner">
+    <div class="info-col">
+      <h3>Get in touch</h3>
+      <p>Whether you're brand new to music or picking back up after a break, Jamie will find an approach that works for you. All ages and levels are welcome.</p>
+      <div class="dlist">
+        <div class="ditem">
+          <div class="dibox">LOC</div>
+          <div><div class="dilbl">Studio Location</div><div class="ditxt">Erving, MA<br>Serving Franklin &amp; Hampshire County<br>Western Massachusetts</div></div>
+        </div>
+        <div class="ditem">
+          <div class="dibox">RATE</div>
+          <div><div class="dilbl">Rate</div><div class="ditxt">$40 per 45-minute session<br>In-person or online</div></div>
+        </div>
+        <div class="ditem">
+          <div class="dibox">HRS</div>
+          <div><div class="dilbl">Availability</div><div class="ditxt">Weekdays &amp; Weekends<br>Flexible scheduling</div></div>
+        </div>
+        <div class="ditem">
+          <div class="dibox">BIO</div>
+          <div><div class="dilbl">About Jamie</div><div class="ditxt"><a href="about.html" style="color:var(--green);text-decoration:none;">View full bio &amp; CV →</a></div></div>
+        </div>
+      </div>
+      <a href="new-student.html" class="nsl">New Student Questionnaire</a>
+
+      <div class="mini-cards">
+        <a href="pricing.html" class="mcard">
+          <div class="mcard-icon">💰</div>
+          <div class="mcard-title">Pricing</div>
+          <div class="mcard-desc">View all rates</div>
+        </a>
+        <a href="reviews.html" class="mcard">
+          <div class="mcard-icon">⭐</div>
+          <div class="mcard-title">Reviews</div>
+          <div class="mcard-desc">What students say</div>
+        </a>
+        <a href="index.html#ebooks" class="mcard">
+          <div class="mcard-icon">📖</div>
+          <div class="mcard-title">E-Books</div>
+          <div class="mcard-desc">Practice routines</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="form-wrap">
+      <div class="ft2">Send an Enquiry</div>
+      <div id="the-form">
+        <div class="frow">
+          <div class="fg"><label for="fn">First Name</label><input type="text" id="fn" placeholder="First name" /></div>
+          <div class="fg"><label for="ln">Last Name</label><input type="text" id="ln" placeholder="Last name" /></div>
+        </div>
+        <div class="fg"><label for="em">Email Address</label><input type="email" id="em" placeholder="you@email.com" /></div>
+        <div class="fg"><label for="ph">Phone (optional)</label><input type="tel" id="ph" placeholder="(413) 555-0000" /></div>
+        <div class="frow">
+          <div class="fg">
+            <label for="ins">Instrument</label>
+            <select id="ins"><option value="">Select...</option><option>Guitar</option><option>Drums</option><option>Both</option></select>
+          </div>
+          <div class="fg">
+            <label for="fmt">Lesson Format</label>
+            <select id="fmt"><option value="">Select...</option><option>In-Person (Erving, MA)</option><option>Online</option><option>Not sure yet</option></select>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="lvl">Experience Level</label>
+          <select id="lvl"><option value="">Select...</option><option>Complete Beginner</option><option>Some Experience</option><option>Intermediate</option><option>Advanced</option></select>
+        </div>
+        <div class="fg">
+          <label for="age">Student Age (if not yourself)</label>
+          <input type="text" id="age" placeholder="e.g. Adult, 12, etc." />
+        </div>
+        <div class="fg"><label for="msg">Tell Jamie a bit about your goals</label><textarea id="msg" placeholder="What do you want to learn? Any songs, styles, or specific goals in mind?"></textarea></div>
+        <button class="fsub" onclick="submitForm()">Send Enquiry →</button>
+      </div>
+      <div class="success" id="success-msg">
+        <h4>Message sent!</h4>
+        <p>Thanks for reaching out. Jamie will be in touch within 24 hours to confirm your first lesson.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" class="flogo">Jamie Barry <span>Music</span></a>
+  <ul class="flinks">
+    <li><a href="pricing.html">Pricing</a></li><li><a href="reviews.html">Reviews</a></li>
+    <li><a href="inquiry.html">Book a Lesson</a></li><li><a href="about.html">About / CV</a></li>
+    <li><a href="new-student.html">New Student Form</a></li>
+  </ul>
+  <span class="fcopy">© 2026 Jamie Barry Music · Erving, MA</span>
+</footer>
+<script>
+  function submitForm(){
+    const fn=document.getElementById('fn').value.trim();
+    const em=document.getElementById('em').value.trim();
+    if(!fn||!em){alert('Please enter your name and email address.');return;}
+    document.getElementById('the-form').style.display='none';
+    document.getElementById('success-msg').style.display='block';
+  }
+</script>
+</body>
+</html>
