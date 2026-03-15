@@ -448,65 +448,70 @@
           <div class="ft2">Reserve Your Spot</div>
           <div class="ft-sub">Jamie will confirm within 24 hours.</div>
 
-          <span class="sec-lbl">Choose your instrument</span>
-          <div class="inst-select">
-            <div class="inst-btn" id="btn-guitar" onclick="selectInst('Guitar')">
-              <div class="inst-icon">🎸</div>
-              <div class="inst-lbl">Guitar</div>
-            </div>
-            <div class="inst-btn" id="btn-drums" onclick="selectInst('Drums')">
-              <div class="inst-icon">🥁</div>
-              <div class="inst-lbl">Drums</div>
-            </div>
-          </div>
-          <input type="hidden" id="inst-val" />
+          <form name="lesson-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+            <input type="hidden" name="form-name" value="lesson-booking" />
+            <p style="display:none;"><input name="bot-field" /></p>
 
-          <span class="sec-lbl">Your details</span>
-          <div class="frow">
-            <div class="fg"><label for="fn">First Name</label><input type="text" id="fn" placeholder="First name" /></div>
-            <div class="fg"><label for="ln">Last Name</label><input type="text" id="ln" placeholder="Last name" /></div>
-          </div>
-          <div class="fg"><label for="em">Email Address</label><input type="email" id="em" placeholder="you@email.com" /></div>
-          <div class="fg"><label for="ph">Phone (optional)</label><input type="tel" id="ph" placeholder="(413) 555-0000" /></div>
+            <span class="sec-lbl">Choose your instrument</span>
+            <div class="inst-select">
+              <div class="inst-btn" id="btn-guitar" onclick="selectInst('Guitar')">
+                <div class="inst-icon">🎸</div>
+                <div class="inst-lbl">Guitar</div>
+              </div>
+              <div class="inst-btn" id="btn-drums" onclick="selectInst('Drums')">
+                <div class="inst-icon">🥁</div>
+                <div class="inst-lbl">Drums</div>
+              </div>
+            </div>
+            <input type="hidden" name="instrument" id="inst-val" />
 
-          <span class="sec-lbl">Lesson details</span>
-          <div class="frow">
+            <span class="sec-lbl">Your details</span>
+            <div class="frow">
+              <div class="fg"><label for="fn">First Name</label><input type="text" id="fn" name="first-name" placeholder="First name" required /></div>
+              <div class="fg"><label for="ln">Last Name</label><input type="text" id="ln" name="last-name" placeholder="Last name" /></div>
+            </div>
+            <div class="fg"><label for="em">Email Address</label><input type="email" id="em" name="email" placeholder="you@email.com" required /></div>
+            <div class="fg"><label for="ph">Phone (optional)</label><input type="tel" id="ph" name="phone" placeholder="(413) 555-0000" /></div>
+
+            <span class="sec-lbl">Lesson details</span>
+            <div class="frow">
+              <div class="fg">
+                <label for="fmt">Lesson Format</label>
+                <select id="fmt" name="lesson-format">
+                  <option value="">Select...</option>
+                  <option>In-Person (Erving, MA)</option>
+                  <option>Online</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="fg">
+                <label for="lvl">Experience Level</label>
+                <select id="lvl" name="experience-level">
+                  <option value="">Select...</option>
+                  <option>Complete Beginner</option>
+                  <option>Some Experience</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+            </div>
             <div class="fg">
-              <label for="fmt">Lesson Format</label>
-              <select id="fmt">
-                <option value="">Select...</option>
-                <option>In-Person (Erving, MA)</option>
-                <option>Online</option>
-                <option>Not sure yet</option>
+              <label for="avail">Best times for you</label>
+              <select id="avail" name="availability">
+                <option value="">Select availability...</option>
+                <option>Weekday mornings</option>
+                <option>Weekday afternoons</option>
+                <option>Weekday evenings</option>
+                <option>Weekend mornings</option>
+                <option>Weekend afternoons</option>
+                <option>Weekend evenings</option>
+                <option>Flexible — I'll work around Jamie's schedule</option>
               </select>
             </div>
-            <div class="fg">
-              <label for="lvl">Experience Level</label>
-              <select id="lvl">
-                <option value="">Select...</option>
-                <option>Complete Beginner</option>
-                <option>Some Experience</option>
-                <option>Intermediate</option>
-                <option>Advanced</option>
-              </select>
-            </div>
-          </div>
-          <div class="fg">
-            <label for="avail">Best times for you</label>
-            <select id="avail">
-              <option value="">Select availability...</option>
-              <option>Weekday mornings</option>
-              <option>Weekday afternoons</option>
-              <option>Weekday evenings</option>
-              <option>Weekend mornings</option>
-              <option>Weekend afternoons</option>
-              <option>Weekend evenings</option>
-              <option>Flexible — I'll work around Jamie's schedule</option>
-            </select>
-          </div>
-          <div class="fg"><label for="msg">Anything else? (optional)</label><textarea id="msg" placeholder="Goals, questions, styles, songs in mind..."></textarea></div>
-          <button class="fsub" onclick="submitForm()">Send Request →</button>
-          <div class="form-note">No payment required now · Jamie confirms within 24 hours</div>
+            <div class="fg"><label for="msg">Anything else? (optional)</label><textarea id="msg" name="message" placeholder="Goals, questions, styles, songs in mind..."></textarea></div>
+            <button type="submit" class="fsub">Send Request →</button>
+            <div class="form-note">No payment required now · Jamie confirms within 24 hours</div>
+          </form>
         </div>
         <div class="success" id="success-msg">
           <span class="suc-icon">✅</span>
@@ -525,7 +530,7 @@
       <div class="band-text">
         <div class="sl">Original Music</div>
         <h2>Band Projects</h2>
-        <img src="sogswampthing.jpg" alt="Sons of Greenwich" style="width:320px;max-width:100%;border-radius:6px;margin:20px 0 28px;display:block;mix-blend-mode:multiply;background:#000;" />
+        <img src="sogswampthing.jpeg" alt="Sons of Greenwich" style="width:320px;max-width:100%;border-radius:6px;margin:20px 0 28px;display:block;" />
         <div class="dv"></div>
         <p>Beyond teaching, Jamie is an active musician. As drummer for <strong style="color:var(--off);">Sons of Greenwich</strong> — a fuzz-drenched doom metal band out of Erving, MA — he brings the same dedication to feel and groove that he brings to every lesson.</p>
         <p>Rooted in 70s hard rock, psychedelia, and the heavy weight of sludge and stoner metal, Sons of Greenwich are preparing to release their debut EP <em style="color:var(--accent);">Hadal</em> and hit stages throughout the Northeast.</p>
@@ -620,14 +625,22 @@
     setTimeout(type, 600);
   }
 
-  // Form submit
-  function submitForm() {
+  // Form submit — Netlify
+  async function handleSubmit(e) {
+    e.preventDefault();
     const fn = document.getElementById('fn').value.trim();
     const em = document.getElementById('em').value.trim();
     if (!fn || !em) { alert('Please enter your name and email address.'); return; }
     if (!selectedInst) { alert('Please select an instrument — guitar or drums.'); return; }
-    document.getElementById('the-form').style.display = 'none';
-    document.getElementById('success-msg').style.display = 'block';
+    const form = e.target;
+    const data = new FormData(form);
+    try {
+      await fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString() });
+      document.getElementById('the-form').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    } catch(err) {
+      alert('Something went wrong. Please try again or email barryjamie@gmail.com directly.');
+    }
   }
 </script>
 </body>
