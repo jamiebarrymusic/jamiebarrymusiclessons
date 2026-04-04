@@ -13,6 +13,14 @@
   <meta name="twitter:title" content="Jamie Barry Music | Guitar & Drum Lessons" />
   <meta name="twitter:description" content="One-on-one guitar and drum lessons in Erving, MA. In-person and online. Book a session today." />
   <meta name="twitter:image" content="teachingastudent.jpg" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6F9GR7LWSZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6F9GR7LWSZ');
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -201,6 +209,31 @@
     .band-link.primary{background:var(--accent);color:var(--white);border-color:var(--accent);}
     .band-link.primary:hover{background:var(--accent-bright);border-color:var(--accent-bright);}
 
+    /* VIDEOS */
+    #videos{background:var(--bg2);}
+    .video-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:22px;align-items:start;}
+    .video-side{display:flex;flex-direction:column;gap:22px;}
+    .video-card{background:var(--card);border:1.5px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;}
+    .video-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,0.3);}
+    .video-embed{position:relative;width:100%;padding-bottom:56.25%;background:var(--bg);}
+    .video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+    .video-meta{padding:16px 18px;}
+    .video-tag{font-family:var(--ft);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;background:var(--accent);color:var(--white);padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:8px;font-weight:bold;}
+    .video-title{font-family:var(--fm);font-size:0.95rem;color:var(--off);line-height:1.5;}
+    .video-card-featured .video-title{font-size:1.05rem;}
+
+    /* NEWSLETTER */
+    #newsletter{background:var(--bg3);}
+    .bd-form{width:100%;}
+    .bd-row{display:flex;flex-direction:column;gap:8px;align-items:center;}
+    .bd-label{font-family:var(--ft);font-size:0.69rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);align-self:flex-start;}
+    .bd-input-wrap{display:flex;width:100%;max-width:480px;gap:0;}
+    .bd-input-wrap input{flex:1;font-family:var(--fm);font-size:1rem;color:var(--off);background:var(--bg2);border:1.5px solid var(--border);border-right:none;padding:13px 16px;outline:none;border-radius:4px 0 0 4px;transition:border-color 0.2s;}
+    .bd-input-wrap input:focus{border-color:var(--accent);background:var(--bg);}
+    .bd-btn{font-family:var(--ft);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;background:var(--accent);color:var(--white);border:none;padding:13px 24px;cursor:pointer;border-radius:0 4px 4px 0;transition:background 0.2s;font-weight:bold;white-space:nowrap;}
+    .bd-btn:hover{background:var(--accent-bright);}
+    .bd-powered{margin-top:14px;text-align:center;}
+
     /* FOOTER */
     footer{background:#141618;color:var(--faint);padding:32px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;border-top:1px solid var(--border);}
     .flogo{display:flex;align-items:center;gap:12px;text-decoration:none;}
@@ -226,7 +259,10 @@
       .hero-overlay{background:linear-gradient(to bottom,transparent 60%,var(--bg) 100%);}
       .sec{padding:64px 20px;}
       .rate-banner{padding:22px 20px;margin-bottom:40px;}
-      .icards,.scards,.ogrid,.book-grid,.frow,.inst-select{grid-template-columns:1fr;max-width:100%;}
+      .icards,.scards,.ogrid,.book-grid,.video-grid,.frow,.inst-select{grid-template-columns:1fr;max-width:100%;}
+      .bd-input-wrap{flex-direction:column;gap:10px;}
+      .bd-input-wrap input{border-right:1.5px solid var(--border);border-radius:4px;}
+      .bd-btn{border-radius:4px;width:100%;}
       footer{flex-direction:column;text-align:center;padding:28px 20px;}
       .flinks{justify-content:center;}
     }
@@ -249,6 +285,7 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#online">Online Lessons</a></li>
     <li><a href="#band">Jamie's Band Projects</a></li>
+    <li><a href="#videos">Videos</a></li>
     <li class="nav-social-divider" aria-hidden="true"></li>
     <li><a href="https://www.instagram.com/jamiebarrymusic" target="_blank" rel="noopener noreferrer" class="nav-social" aria-label="Jamie Barry Music on Instagram - opens in new tab">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -272,6 +309,7 @@
   <a href="#faq" onclick="closeMenu()">FAQ</a>
   <a href="#online" onclick="closeMenu()">Online Lessons</a>
   <a href="#band" onclick="closeMenu()">Jamie's Band Projects</a>
+  <a href="#videos" onclick="closeMenu()">Videos</a>
   <div style="display:flex;gap:12px;padding:10px 16px;">
     <a href="https://www.instagram.com/jamiebarrymusic" target="_blank" rel="noopener noreferrer" class="nav-social mob" aria-label="Jamie Barry Music on Instagram - opens in new tab">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -587,6 +625,102 @@
 </section>
 </main>
 
+<!-- VIDEOS -->
+<section id="videos" class="sec" aria-labelledby="videos-heading" style="background:var(--bg2);">
+  <div class="si">
+    <div class="reveal">
+      <div class="sl" aria-hidden="true">Watch &amp; Learn</div>
+      <h2 id="videos-heading">From the Channel</h2>
+      <div class="dv"></div>
+      <p style="font-family:var(--fm);font-size:1rem;color:var(--muted);margin-bottom:40px;max-width:640px;line-height:1.8;">Guitar techniques, pedal demos, drum experiments, and more — new content posted regularly on the <a href="https://www.youtube.com/@jamiebarrymusic" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.4);">@jamiebarrymusic</a> YouTube channel.</p>
+
+      <div class="video-grid">
+        <!-- Top video: Rat distortion + reverse delay — your #1 performer -->
+        <div class="video-card video-card-featured">
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/7VRgAFFpYjs"
+              title="Rat distortion blended with reverse delay in parallel"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+          <div class="video-meta">
+            <span class="video-tag">Most Watched</span>
+            <div class="video-title">Rat distortion blended with reverse delay in parallel</div>
+          </div>
+        </div>
+
+        <div class="video-side">
+          <!-- Roto Tom Gibraltar clamp -->
+          <div class="video-card">
+            <div class="video-embed">
+              <iframe
+                src="https://www.youtube.com/embed/cyvyWoXHHqY"
+                title="Remo Roto Tom mounted with Gibraltar clamp"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"></iframe>
+            </div>
+            <div class="video-meta">
+              <div class="video-title">Roto Tom mounted with Gibraltar clamp above the hi-hat</div>
+            </div>
+          </div>
+
+          <!-- Hybrid pick technique -->
+          <div class="video-card">
+            <div class="video-embed">
+              <iframe
+                src="https://www.youtube.com/embed/i0wkbQ_9exA"
+                title="Hybrid pick technique"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"></iframe>
+            </div>
+            <div class="video-meta">
+              <div class="video-title">Hybrid pick technique</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:44px;">
+        <a href="https://www.youtube.com/@jamiebarrymusic" target="_blank" rel="noopener noreferrer" class="btn btn-green" aria-label="View all videos on YouTube - opens in new tab">View All Videos on YouTube →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter" class="sec" aria-labelledby="newsletter-heading" style="background:var(--bg3);border-top:3px solid var(--accent);">
+  <div class="si">
+    <div class="reveal" style="max-width:620px;margin:0 auto;text-align:center;">
+      <div class="sl" aria-hidden="true" style="justify-content:center;">Stay in the loop</div>
+      <h2 id="newsletter-heading">Join the mailing list</h2>
+      <div class="dv" style="margin:0 auto 28px;"></div>
+      <p style="font-family:var(--fm);font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:36px;">Lesson tips, gear deep-dives, new videos, and the occasional Sons of Greenwich update — straight to your inbox. No spam, unsubscribe anytime.</p>
+
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/barryjamie"
+        method="post"
+        class="bd-form"
+        aria-label="Email newsletter signup"
+      >
+        <div class="bd-row">
+          <label for="bd-email" class="bd-label">Your email address</label>
+          <div class="bd-input-wrap">
+            <input type="email" name="email" id="bd-email" placeholder="you@email.com" required aria-required="true" autocomplete="email" />
+            <button type="submit" class="bd-btn">Subscribe →</button>
+          </div>
+        </div>
+        <p class="bd-powered">
+          <a href="https://buttondown.com/refer/barryjamie" target="_blank" rel="noopener noreferrer" style="color:var(--faint);font-family:var(--ft);font-size:0.62rem;letter-spacing:0.08em;text-decoration:none;">Powered by Buttondown</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer role="contentinfo">
   <a href="#hero" class="flogo" aria-label="Jamie Barry Music - return to top" style="display:flex;align-items:center;gap:12px;">
@@ -599,6 +733,8 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#online">Online Lessons</a></li>
     <li><a href="#band">Jamie's Band Projects</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
     <li><a href="#book">Book a Lesson</a></li>
   </ul>
   <span class="fcopy">© 2026 Jamie Barry Music · Erving, MA</span>
@@ -612,7 +748,7 @@
   });
 
   // Active nav link highlight
-  const sections = ['hero','instruments','services','faq','online','book','band'];
+  const sections = ['hero','instruments','services','faq','online','book','band','videos','newsletter'];
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
     let current = '';
