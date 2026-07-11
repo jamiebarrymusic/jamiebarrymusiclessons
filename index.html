@@ -22,6 +22,10 @@
     gtag('config', 'G-6F9GR7LWSZ');
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://assets.calendly.com" />
+  <link rel="preconnect" href="https://calendly.com" />
+  <link rel="dns-prefetch" href="https://assets.calendly.com" />
+  <link rel="dns-prefetch" href="https://calendly.com" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{
@@ -199,6 +203,18 @@
     .success h4{font-family:var(--fd);font-size:1.8rem;color:var(--accent);margin-bottom:10px;}
     .success p{font-family:var(--fm);font-size:1.05rem;color:var(--muted);line-height:1.8;}
 
+    /* INSTANT BOOK — Calendly */
+    #book-instant{background:var(--bg2);border-top:1px solid var(--border);}
+    .ib-intro{max-width:680px;margin-bottom:40px;}
+    .ib-intro p{font-family:var(--fm);font-size:1.05rem;color:var(--muted);line-height:1.85;}
+    .booking-wrap{position:relative;min-height:660px;max-width:820px;border-radius:8px;overflow:hidden;border:1.5px solid var(--border);}
+    .booking-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:var(--card);color:var(--muted);font-family:var(--ft);font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;transition:opacity 0.3s ease;}
+    .booking-loading.hidden{opacity:0;pointer-events:none;}
+    .ib-spinner{width:28px;height:28px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:ib-spin 0.8s linear infinite;}
+    @keyframes ib-spin{to{transform:rotate(360deg);}}
+    .calendly-inline-widget{background:var(--card);}
+    .ib-note{font-family:var(--ft);font-size:0.7rem;letter-spacing:0.08em;color:var(--faint);margin-top:16px;max-width:820px;}
+
     /* BAND */
     #band{background:var(--bg);}
     .band-text .sl{color:var(--accent);}
@@ -286,6 +302,7 @@
     <li><a href="#online">Online Lessons</a></li>
     <li><a href="#band">Jamie's Band Projects</a></li>
     <li><a href="#videos">Videos</a></li>
+    <li><a href="#book-instant">Book Instantly</a></li>
     <li class="nav-social-divider" aria-hidden="true"></li>
     <li><a href="https://www.instagram.com/jamiebarrymusic" target="_blank" rel="noopener noreferrer" class="nav-social" aria-label="Jamie Barry Music on Instagram - opens in new tab">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -310,6 +327,7 @@
   <a href="#online" onclick="closeMenu()">Online Lessons</a>
   <a href="#band" onclick="closeMenu()">Jamie's Band Projects</a>
   <a href="#videos" onclick="closeMenu()">Videos</a>
+  <a href="#book-instant" onclick="closeMenu()">Book Instantly</a>
   <div style="display:flex;gap:12px;padding:10px 16px;">
     <a href="https://www.instagram.com/jamiebarrymusic" target="_blank" rel="noopener noreferrer" class="nav-social mob" aria-label="Jamie Barry Music on Instagram - opens in new tab">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -602,6 +620,26 @@
   </div>
 </section>
 
+<!-- INSTANT BOOKING — CALENDLY -->
+<section id="book-instant" class="sec" aria-labelledby="book-instant-heading">
+  <div class="si reveal">
+    <div class="sl" aria-hidden="true">Prefer to Pick a Time Yourself?</div>
+    <h2 id="book-instant-heading">Book Instantly</h2>
+    <div class="dv" aria-hidden="true"></div>
+    <div class="ib-intro">
+      <p>Skip the back-and-forth — grab an open slot directly on Jamie's calendar and it's locked in immediately. Good for a quick first lesson or a one-off session; for ongoing weekly lessons, the <a href="#book" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.4);">booking form above</a> still works great too.</p>
+    </div>
+    <div class="booking-wrap">
+      <div class="booking-loading" id="bookingLoading">
+        <div class="ib-spinner" aria-hidden="true"></div>
+        <span>Loading booking calendar…</span>
+      </div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/barryjamie-dpdm/30min" style="min-width:320px;height:660px;"></div>
+    </div>
+    <p class="ib-note">Scheduling powered by Calendly.</p>
+  </div>
+</section>
+
 <!-- BAND PROJECTS -->
 <section id="band" class="sec" aria-labelledby="band-heading">
   <div class="si">
@@ -736,6 +774,7 @@
     <li><a href="#videos">Videos</a></li>
     <li><a href="#newsletter">Newsletter</a></li>
     <li><a href="#book">Book a Lesson</a></li>
+    <li><a href="#book-instant">Book Instantly</a></li>
   </ul>
   <span class="fcopy">© 2026 Jamie Barry Music · Erving, MA</span>
 </footer>
@@ -748,7 +787,7 @@
   });
 
   // Active nav link highlight
-  const sections = ['hero','instruments','services','faq','online','book','band','videos','newsletter'];
+  const sections = ['hero','instruments','services','faq','online','book','book-instant','band','videos','newsletter'];
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
     let current = '';
@@ -844,6 +883,24 @@
       alert('Something went wrong. Please try again or email barryjamie@gmail.com directly.');
     }
   }
+
+  // Instant Booking — Calendly loader
+  (function () {
+    const loader = document.getElementById('bookingLoading');
+    if (!loader) return;
+    function hideLoader() { loader.classList.add('hidden'); }
+    window.addEventListener('message', (e) => {
+      if (typeof e.data === 'object' && e.data && e.data.event && String(e.data.event).indexOf('calendly') === 0) {
+        hideLoader();
+      }
+    });
+    // Fallback so the spinner doesn't spin forever if Calendly is slow to post messages.
+    setTimeout(hideLoader, 6000);
+  })();
 </script>
+
+<!-- Calendly widget script, loaded deferred since this section is below the fold -->
+<script src="https://assets.calendly.com/assets/external/widget.js" defer></script>
+
 </body>
 </html>
