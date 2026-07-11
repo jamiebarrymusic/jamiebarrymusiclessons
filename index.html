@@ -29,9 +29,9 @@
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{
-      --bg:#1c1e22;--bg2:#22252b;--bg3:#282c33;--bg4:#2e323a;--card:#31353e;
+      --bg:#26292f;--bg2:#2c2f37;--bg3:#33373f;--bg4:#393d47;--card:#3c414c;
       --border:rgba(255,255,255,0.08);--white:#fff;--off:#e8eaed;--muted:#9aa0ad;--faint:#636b78;
-      --accent:#c0392b;--accent-bright:#e74c3c;--accent-glow:rgba(192,57,43,0.15);--accent-dim:#922b21;
+      --accent:#4d74b0;--accent-bright:#6b93d1;--accent-glow:rgba(77,116,176,0.2);--accent-dim:#2c4870;
       --fd:'Special Elite',cursive;--fm:'Courier Prime',monospace;--ft:'Share Tech Mono',monospace;
     }
     html{scroll-behavior:smooth;scroll-padding-top:72px;}
@@ -93,7 +93,7 @@
     .btn-ghost{background:transparent;color:var(--off);border:1.5px solid rgba(255,255,255,0.25);}
     .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
     .badge{font-family:var(--ft);font-size:0.71rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--bg3);color:var(--muted);border:1px solid var(--border);padding:5px 13px;border-radius:20px;}
-    .badge.g{background:rgba(192,57,43,0.12);color:var(--accent);border-color:rgba(192,57,43,0.3);}
+    .badge.g{background:rgba(77,116,176,0.12);color:var(--accent);border-color:rgba(77,116,176,0.3);}
 
     /* SHARED */
     .sec{padding:90px 52px;}
@@ -129,7 +129,7 @@
     .scards{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:820px;}
     .scard{background:var(--card);border:1.5px solid var(--border);border-radius:8px;padding:38px 32px;border-top:4px solid transparent;transition:border-top-color 0.2s,transform 0.2s,box-shadow 0.2s;}
     .scard:hover{border-top-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.3);}
-    .scard.feat{background:#2a1a1a;border-color:rgba(192,57,43,0.25);border-top-color:var(--accent);}
+    .scard.feat{background:#242c3d;border-color:rgba(77,116,176,0.25);border-top-color:var(--accent);}
     .sbadge{font-family:var(--ft);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;background:var(--accent);color:var(--white);padding:4px 10px;border-radius:2px;margin-bottom:14px;display:inline-block;font-weight:bold;}
     .scard h3{font-family:var(--fd);font-size:1.65rem;color:var(--white);margin-bottom:6px;}
     .stag{font-family:var(--ft);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);border:1px solid var(--border);padding:3px 10px;border-radius:2px;display:inline-block;margin-bottom:18px;}
@@ -153,7 +153,7 @@
     .faq-item.open .faq-arrow{transform:rotate(180deg);}
 
     /* ONLINE */
-    #online{background:linear-gradient(135deg,#2a1212 0%,#1c1e22 60%);border-top:3px solid var(--accent);}
+    #online{background:linear-gradient(135deg,#242c3d 0%,#26292f 60%);border-top:3px solid var(--accent);}
     .ogrid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
     .otagline{font-family:var(--fd);font-size:1.3rem;color:rgba(255,255,255,0.6);font-style:italic;margin-bottom:16px;}
     .obody{font-family:var(--fm);color:var(--muted);font-size:1.05rem;line-height:1.85;margin-bottom:24px;}
@@ -178,13 +178,13 @@
     .dlbl{font-family:var(--ft);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);}
     .dtxt{font-family:var(--fm);font-size:0.98rem;color:var(--muted);line-height:1.6;}
     .plats{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
-    .form-wrap{background:var(--card);border:1.5px solid rgba(192,57,43,0.2);border-radius:10px;padding:44px 40px;box-shadow:0 0 60px rgba(192,57,43,0.05);}
+    .form-wrap{background:var(--card);border:1.5px solid rgba(77,116,176,0.2);border-radius:10px;padding:44px 40px;box-shadow:0 0 60px rgba(77,116,176,0.05);}
     .ft2{font-family:var(--fd);font-size:1.6rem;color:var(--white);margin-bottom:6px;}
     .ft-sub{font-family:var(--fm);font-size:0.98rem;color:var(--muted);margin-bottom:28px;}
     .inst-select{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px;}
     .inst-btn{background:var(--bg3);border:2px solid var(--border);border-radius:6px;padding:16px;cursor:pointer;text-align:center;transition:border-color 0.2s,background 0.2s;display:flex;flex-direction:column;align-items:center;gap:6px;}
     .inst-btn:hover{border-color:var(--accent);}
-    .inst-btn.selected{border-color:var(--accent);background:rgba(192,57,43,0.08);}
+    .inst-btn.selected{border-color:var(--accent);background:rgba(77,116,176,0.08);}
     .inst-icon{font-size:1.7rem;}
     .inst-lbl{font-family:var(--ft);font-size:0.70rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
     .inst-btn.selected .inst-lbl{color:var(--accent);}
@@ -198,7 +198,7 @@
     .fsub{width:100%;font-family:var(--ft);font-size:0.98rem;letter-spacing:0.14em;text-transform:uppercase;background:var(--accent);color:var(--white);border:none;padding:17px;cursor:pointer;border-radius:4px;transition:background 0.2s;margin-top:8px;font-weight:bold;}
     .fsub:hover{background:var(--accent-bright);}
     .form-note{font-family:var(--ft);font-size:0.68rem;letter-spacing:0.08em;color:var(--faint);text-align:center;margin-top:10px;}
-    .success{display:none;background:rgba(192,57,43,0.08);border:2px solid var(--accent);border-radius:8px;padding:44px 32px;text-align:center;}
+    .success{display:none;background:rgba(77,116,176,0.08);border:2px solid var(--accent);border-radius:8px;padding:44px 32px;text-align:center;}
     .suc-icon{font-size:3rem;display:block;margin-bottom:14px;}
     .success h4{font-family:var(--fd);font-size:1.8rem;color:var(--accent);margin-bottom:10px;}
     .success p{font-family:var(--fm);font-size:1.05rem;color:var(--muted);line-height:1.8;}
@@ -251,7 +251,7 @@
     .bd-powered{margin-top:14px;text-align:center;}
 
     /* FOOTER */
-    footer{background:#141618;color:var(--faint);padding:32px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;border-top:1px solid var(--border);}
+    footer{background:#1c1f24;color:var(--faint);padding:32px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;border-top:1px solid var(--border);}
     .flogo{display:flex;align-items:center;gap:12px;text-decoration:none;}
     .flinks{display:flex;gap:20px;list-style:none;flex-wrap:wrap;}
     .flinks a{font-family:var(--ft);font-size:0.70rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);text-decoration:none;transition:color 0.2s;}
@@ -296,8 +296,8 @@
     <span class="nav-logo-text">Jamie Barry <span>Music</span></span>
   </a>
   <ul class="nav-links" role="list">
-    <li><a href="#instruments">Instruments</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#instruments">Instruments</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#online">Online Lessons</a></li>
     <li><a href="#band">Jamie's Band Projects</a></li>
@@ -321,8 +321,8 @@
 
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
-  <a href="#instruments" onclick="closeMenu()">Instruments</a>
   <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#instruments" onclick="closeMenu()">Instruments</a>
   <a href="#faq" onclick="closeMenu()">FAQ</a>
   <a href="#online" onclick="closeMenu()">Online Lessons</a>
   <a href="#band" onclick="closeMenu()">Jamie's Band Projects</a>
@@ -347,7 +347,7 @@
   <div class="hero-left">
     <div class="hero-tag" aria-hidden="true">Guitar &amp; Drum Lessons · Erving, MA</div>
     <h1>Fun Practice<br>Leads to<br><span class="accent">Fun Play.</span></h1>
-    <p class="hero-sub">One-on-one lessons at <strong><a href="https://maps.google.com/?q=1+River+St,+Erving,+MA" target="_blank" rel="noopener noreferrer" aria-label="1 River St, Erving MA - opens Google Maps in new tab" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.4);">1 River St, Erving, MA</a></strong> — serving Franklin &amp; Hampshire County and all of Western Massachusetts. In-person and online. Custom lesson material written for you each session — guitar tab, chords, or standard notation.</p>
+    <p class="hero-sub">One-on-one lessons at <strong><a href="https://maps.google.com/?q=1+River+St,+Erving,+MA" target="_blank" rel="noopener noreferrer" aria-label="1 River St, Erving MA - opens Google Maps in new tab" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(77,116,176,0.4);">1 River St, Erving, MA</a></strong> — serving Franklin &amp; Hampshire County and all of Western Massachusetts. In-person and online. Custom lesson material written for you each session — guitar tab, chords, or standard notation.</p>
     <div class="hero-ctas">
       <a href="#book" class="btn btn-green">Book a Lesson</a>
       <a href="#services" class="btn btn-ghost">View Services</a>
@@ -363,35 +363,6 @@
     <img src="guitar_lesson_flyer.jpg" alt="" role="presentation" />
     <div class="hero-overlay"></div>
     <div class="hero-label">Jamie Barry Music · Erving, MA</div>
-  </div>
-</section>
-
-<!-- INSTRUMENTS -->
-<section id="instruments" class="sec" aria-labelledby="instruments-heading">
-  <div class="si reveal">
-    <p class="pick-q" id="instruments-heading">Which instrument are you interested in?</p>
-    <div class="icards">
-      <a href="#book" class="icard" aria-label="Book a guitar lesson - acoustic or electric, all levels">
-        <div class="iimg">
-          <img src="guitarheadstock.jpg" alt="Close-up of guitar tuning pegs and headstock" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;" />
-        </div>
-        <div class="ibody">
-          <div class="iname">Guitar</div>
-          <p class="idesc">Acoustic or electric, first chords or advanced technique — lessons shaped entirely around your style and goals.</p>
-          <div class="icta" aria-hidden="true">Book a guitar lesson</div>
-        </div>
-      </a>
-      <a href="#book" class="icard" aria-label="Book a drum lesson - all styles and levels">
-        <div class="iimg">
-          <img src="drumheadphones.jpg" alt="Drum kit with headphones resting on the bass drum head" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;" />
-        </div>
-        <div class="ibody">
-          <div class="iname">Drums</div>
-          <p class="idesc">Build your groove, develop technique, and learn to play the music you love — from rock and pop to jazz.</p>
-          <div class="icta" aria-hidden="true">Book a drum lesson</div>
-        </div>
-      </a>
-    </div>
   </div>
 </section>
 
@@ -444,6 +415,35 @@
   </div>
 </section>
 
+<!-- INSTRUMENTS -->
+<section id="instruments" class="sec" aria-labelledby="instruments-heading">
+  <div class="si reveal">
+    <p class="pick-q" id="instruments-heading">Which instrument are you interested in?</p>
+    <div class="icards">
+      <a href="#book" class="icard" aria-label="Book a guitar lesson - acoustic or electric, all levels">
+        <div class="iimg">
+          <img src="guitarheadstock.jpg" alt="Close-up of guitar tuning pegs and headstock" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;" />
+        </div>
+        <div class="ibody">
+          <div class="iname">Guitar</div>
+          <p class="idesc">Acoustic or electric, first chords or advanced technique — lessons shaped entirely around your style and goals.</p>
+          <div class="icta" aria-hidden="true">Book a guitar lesson</div>
+        </div>
+      </a>
+      <a href="#book" class="icard" aria-label="Book a drum lesson - all styles and levels">
+        <div class="iimg">
+          <img src="drumheadphones.jpg" alt="Drum kit with headphones resting on the bass drum head" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;" />
+        </div>
+        <div class="ibody">
+          <div class="iname">Drums</div>
+          <p class="idesc">Build your groove, develop technique, and learn to play the music you love — from rock and pop to jazz.</p>
+          <div class="icta" aria-hidden="true">Book a drum lesson</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq" class="sec" aria-labelledby="faq-heading">
   <div class="si reveal">
@@ -476,7 +476,7 @@
 </section>
 
 <!-- ONLINE LESSONS -->
-<section id="online" class="sec" aria-labelledby="online-heading" style="background:linear-gradient(135deg,#2a1212 0%,#1c1e22 60%);border-top:3px solid var(--accent);">
+<section id="online" class="sec" aria-labelledby="online-heading" style="background:linear-gradient(135deg,#242c3d 0%,#26292f 60%);border-top:3px solid var(--accent);">
   <div class="si">
     <div class="ogrid reveal">
       <div>
@@ -627,7 +627,7 @@
     <h2 id="book-instant-heading">Book Instantly</h2>
     <div class="dv" aria-hidden="true"></div>
     <div class="ib-intro">
-      <p>Skip the back-and-forth — grab an open slot directly on Jamie's calendar and it's locked in immediately. Good for a quick first lesson or a one-off session; for ongoing weekly lessons, the <a href="#book" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.4);">booking form above</a> still works great too.</p>
+      <p>Skip the back-and-forth — grab an open slot directly on Jamie's calendar and it's locked in immediately. Good for a quick first lesson or a one-off session; for ongoing weekly lessons, the <a href="#book" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(77,116,176,0.4);">booking form above</a> still works great too.</p>
     </div>
     <div class="booking-wrap">
       <div class="booking-loading" id="bookingLoading">
@@ -670,7 +670,7 @@
       <div class="sl" aria-hidden="true">Watch &amp; Learn</div>
       <h2 id="videos-heading">From the Channel</h2>
       <div class="dv"></div>
-      <p style="font-family:var(--fm);font-size:1rem;color:var(--muted);margin-bottom:40px;max-width:640px;line-height:1.8;">Guitar techniques, pedal demos, drum experiments, and more — new content posted regularly on the <a href="https://www.youtube.com/@jamiebarrymusic" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.4);">@jamiebarrymusic</a> YouTube channel.</p>
+      <p style="font-family:var(--fm);font-size:1rem;color:var(--muted);margin-bottom:40px;max-width:640px;line-height:1.8;">Guitar techniques, pedal demos, drum experiments, and more — new content posted regularly on the <a href="https://www.youtube.com/@jamiebarrymusic" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(77,116,176,0.4);">@jamiebarrymusic</a> YouTube channel.</p>
 
       <div class="video-grid">
         <!-- Top video: Rat distortion + reverse delay — your #1 performer -->
@@ -766,8 +766,8 @@
     <span style="font-family:var(--fd);font-size:1.05rem;color:var(--white);">Jamie Barry <span style="color:var(--accent);">Music</span></span>
   </a>
   <ul class="flinks" role="list">
-    <li><a href="#instruments">Instruments</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#instruments">Instruments</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#online">Online Lessons</a></li>
     <li><a href="#band">Jamie's Band Projects</a></li>
@@ -787,7 +787,7 @@
   });
 
   // Active nav link highlight
-  const sections = ['hero','instruments','services','faq','online','book','book-instant','band','videos','newsletter'];
+  const sections = ['hero','services','instruments','faq','online','book','book-instant','band','videos','newsletter'];
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
     let current = '';
