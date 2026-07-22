@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Jamie Barry Music</title>
+  <meta name="description" content="Practice routines, technique breakdowns, and gear notes from Jamie Barry Music — guitar & drum lessons in Erving, MA." />
+  <meta property="og:title" content="Blog | Jamie Barry Music" />
+  <meta property="og:description" content="Practice routines, technique breakdowns, and gear notes from Jamie Barry Music." />
+  <meta property="og:url" content="https://www.jamiebarrymusic.com/blog.html" />
+  <meta property="og:type" content="website" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6F9GR7LWSZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6F9GR7LWSZ');
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --bg:#1c1e22;--bg2:#22252b;--bg3:#282c33;--bg4:#2e323a;--card:#31353e;
+      --border:rgba(255,255,255,0.08);--white:#fff;--off:#e8eaed;--muted:#9aa0ad;--faint:#636b78;
+      --accent:#c0392b;--accent-bright:#e74c3c;--accent-glow:rgba(192,57,43,0.15);--accent-dim:#922b21;
+      --fd:'Special Elite',cursive;--fm:'Courier Prime',monospace;--ft:'Share Tech Mono',monospace;
+    }
+    html{scroll-behavior:smooth;scroll-padding-top:72px;}
+    body{background:var(--bg);color:var(--off);font-family:var(--fm);font-size:19px;line-height:1.75;overflow-x:hidden;}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:3px;}
+    .skip-link{position:absolute;top:-100px;left:12px;background:var(--accent);color:#fff;padding:10px 20px;font-family:var(--ft);font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;z-index:9999;border-radius:0 0 4px 4px;transition:top 0.2s;}
+    .skip-link:focus{top:0;}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:68px;background:rgba(28,30,34,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
+    .nav-logo-text{font-family:var(--fd);font-size:1.2rem;color:var(--white);}
+    .nav-logo-text span{color:var(--accent);}
+    .nav-links{display:flex;gap:6px;list-style:none;align-items:center;}
+    .nav-links a{font-family:var(--ft);font-size:0.76rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:3px;transition:color 0.2s,background 0.2s;}
+    .nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.06);}
+    .nav-links a.active{color:var(--accent);}
+    .nav-cta{color:var(--white)!important;background:var(--accent)!important;padding:9px 20px!important;font-weight:bold;}
+    .nav-cta:hover{background:var(--accent-bright)!important;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
+    .nav-hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;}
+    .mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(28,30,34,0.99);border-bottom:1px solid var(--border);z-index:199;padding:16px 20px;flex-direction:column;gap:4px;}
+    .mobile-menu a{font-family:var(--ft);font-size:0.86rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:12px 16px;border-radius:4px;display:block;}
+    .mobile-menu a:hover{background:rgba(255,255,255,0.06);color:var(--white);}
+    .mobile-menu a.mob-cta{background:var(--accent);color:var(--white);font-weight:bold;margin-top:8px;text-align:center;}
+    .mobile-menu.open{display:flex;}
+
+    /* SHARED */
+    .sec{padding:90px 52px;}
+    .si{max-width:1100px;margin:0 auto;}
+    .sl{font-family:var(--ft);font-size:0.74rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+    .sl::before{content:'//';opacity:0.4;}
+    h1,h2{font-family:var(--fd);color:var(--white);line-height:1.12;}
+    h1{font-size:clamp(2.4rem,4.2vw,3.8rem);margin-bottom:16px;}
+    .dv{width:36px;height:3px;background:var(--accent);margin-bottom:44px;}
+    .lede{font-family:var(--fm);font-size:1.08rem;color:var(--muted);max-width:640px;line-height:1.85;margin-bottom:20px;}
+
+    /* HEADER */
+    #bhead{padding-top:150px;background:var(--bg2);}
+
+    /* POST CARDS */
+    .plist2{display:flex;flex-direction:column;gap:22px;max-width:820px;}
+    .pcard{background:var(--card);border:1.5px solid var(--border);border-radius:8px;padding:36px 34px;text-decoration:none;display:block;transition:border-color 0.25s,transform 0.2s,box-shadow 0.2s;}
+    .pcard:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 44px rgba(0,0,0,0.35);}
+    .pmeta{display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap;}
+    .ptag2{font-family:var(--ft);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;background:rgba(192,57,43,0.12);color:var(--accent);border:1px solid rgba(192,57,43,0.3);padding:4px 11px;border-radius:20px;}
+    .pdate{font-family:var(--ft);font-size:0.7rem;letter-spacing:0.08em;color:var(--faint);}
+    .ptitle{font-family:var(--fd);font-size:1.6rem;color:var(--white);margin-bottom:10px;line-height:1.25;}
+    .pexcerpt{font-family:var(--fm);font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:14px;}
+    .pcta{font-family:var(--ft);font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:6px;}
+    .pcta::after{content:'→';transition:transform 0.2s;}
+    .pcard:hover .pcta::after{transform:translateX(5px);}
+    .soon{border-style:dashed;opacity:0.55;}
+    .soon:hover{transform:none;box-shadow:none;border-color:var(--border);}
+
+    footer{background:#141618;color:var(--faint);padding:32px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;border-top:1px solid var(--border);}
+    .flogo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .flinks{display:flex;gap:20px;list-style:none;flex-wrap:wrap;}
+    .flinks a{font-family:var(--ft);font-size:0.70rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);text-decoration:none;transition:color 0.2s;}
+    .flinks a:hover{color:var(--accent);}
+    .fcopy{font-family:var(--ft);font-size:0.70rem;letter-spacing:0.08em;}
+
+    @media(max-width:960px){
+      nav{padding:0 20px;}
+      .nav-links{display:none;}
+      .nav-hamburger{display:flex;}
+      .sec{padding:56px 20px;}
+      #bhead{padding-top:120px;}
+      footer{flex-direction:column;text-align:center;padding:28px 20px;}
+      .flinks{justify-content:center;}
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="Jamie Barry Music - return to homepage">
+    <img src="guitar_range_logo.png" alt="" role="presentation" style="height:44px;width:44px;object-fit:cover;border-radius:50%;object-position:center center;display:block;border:2px solid var(--accent);" />
+    <span class="nav-logo-text">Jamie Barry <span>Music</span></span>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="index.html#instruments">Instruments</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#online">Online Lessons</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="index.html#book" class="nav-cta">Book a Lesson</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="toggleMenu()" id="hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html#instruments" onclick="closeMenu()">Instruments</a>
+  <a href="index.html#services" onclick="closeMenu()">Services</a>
+  <a href="index.html#faq" onclick="closeMenu()">FAQ</a>
+  <a href="index.html#online" onclick="closeMenu()">Online Lessons</a>
+  <a href="blog.html" onclick="closeMenu()">Blog</a>
+  <a href="index.html#book" onclick="closeMenu()" class="mob-cta">Book a Lesson</a>
+</div>
+
+<main id="main-content">
+<section id="bhead" class="sec" aria-labelledby="blog-heading">
+  <div class="si">
+    <div class="sl" aria-hidden="true">The Blog</div>
+    <h1 id="blog-heading">Practice, Technique &amp; a Little Philosophy</h1>
+    <div class="dv" aria-hidden="true"></div>
+    <p class="lede">Notes on practicing with curiosity instead of dread — technical concepts explained plainly, with plenty of room left for you to make them your own.</p>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0;background:var(--bg2);" aria-label="Blog posts">
+  <div class="si">
+    <div class="plist2">
+      <a href="creative-practice-esus4.html" class="pcard" aria-label="Read: Finding Your Voice in One Chord">
+        <div class="pmeta">
+          <span class="ptag2">Guitar</span>
+          <span class="ptag2">Practice</span>
+          <span class="pdate">July 2026</span>
+        </div>
+        <div class="ptitle">Finding Your Voice in One Chord: A Creative Practice Routine</div>
+        <p class="pexcerpt">A beginner-to-intermediate practice routine built around a single sound — Esus4 — that trades "no pain, no gain" for curiosity, and still covers the fundamentals.</p>
+        <div class="pcta" aria-hidden="true">Read the post</div>
+      </a>
+
+      <div class="pcard soon" aria-label="More posts coming soon">
+        <div class="pmeta"><span class="pdate">More soon</span></div>
+        <div class="ptitle" style="color:var(--muted);">New posts in the works</div>
+        <p class="pexcerpt">Gear notes, more practice routines, and drum-side breakdowns are on the way. Check back soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer role="contentinfo">
+  <a href="index.html" class="flogo" aria-label="Jamie Barry Music - return to homepage">
+    <img src="guitar_range_logo.png" alt="" role="presentation" style="height:40px;width:40px;object-fit:cover;border-radius:50%;object-position:center center;display:block;border:2px solid var(--accent);" />
+    <span style="font-family:var(--fd);font-size:1.05rem;color:var(--white);">Jamie Barry <span style="color:var(--accent);">Music</span></span>
+  </a>
+  <ul class="flinks" role="list">
+    <li><a href="index.html#instruments">Instruments</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="index.html#book">Book a Lesson</a></li>
+  </ul>
+  <span class="fcopy">© 2026 Jamie Barry Music · Erving, MA</span>
+</footer>
+
+<script>
+  function toggleMenu(){
+    const menu=document.getElementById('mobile-menu');
+    const btn=document.getElementById('hamburger');
+    const isOpen=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',isOpen);
+    btn.setAttribute('aria-label',isOpen?'Close navigation menu':'Open navigation menu');
+  }
+  function closeMenu(){
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.getElementById('hamburger').setAttribute('aria-expanded','false');
+  }
+</script>
+</body>
+</html>

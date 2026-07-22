@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finding Your Voice in One Chord: A Creative Practice Routine | Jamie Barry Music</title>
+  <meta name="description" content="A beginner-to-intermediate guitar practice routine built around Esus4 — trading no-pain-no-gain for curiosity, while still covering the fundamentals." />
+  <meta property="og:title" content="Finding Your Voice in One Chord: A Creative Practice Routine" />
+  <meta property="og:description" content="A beginner-to-intermediate guitar practice routine built around Esus4 — trading no-pain-no-gain for curiosity, while still covering the fundamentals." />
+  <meta property="og:url" content="https://www.jamiebarrymusic.com/creative-practice-esus4.html" />
+  <meta property="og:type" content="article" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6F9GR7LWSZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6F9GR7LWSZ');
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --bg:#1c1e22;--bg2:#22252b;--bg3:#282c33;--bg4:#2e323a;--card:#31353e;
+      --border:rgba(255,255,255,0.08);--white:#fff;--off:#e8eaed;--muted:#9aa0ad;--faint:#636b78;
+      --accent:#c0392b;--accent-bright:#e74c3c;--accent-glow:rgba(192,57,43,0.15);--accent-dim:#922b21;
+      --fd:'Special Elite',cursive;--fm:'Courier Prime',monospace;--ft:'Share Tech Mono',monospace;
+    }
+    html{scroll-behavior:smooth;scroll-padding-top:72px;}
+    body{background:var(--bg);color:var(--off);font-family:var(--fm);font-size:19px;line-height:1.75;overflow-x:hidden;}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:3px;}
+    .skip-link{position:absolute;top:-100px;left:12px;background:var(--accent);color:#fff;padding:10px 20px;font-family:var(--ft);font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;z-index:9999;border-radius:0 0 4px 4px;transition:top 0.2s;}
+    .skip-link:focus{top:0;}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:68px;background:rgba(28,30,34,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
+    .nav-logo-text{font-family:var(--fd);font-size:1.2rem;color:var(--white);}
+    .nav-logo-text span{color:var(--accent);}
+    .nav-links{display:flex;gap:6px;list-style:none;align-items:center;}
+    .nav-links a{font-family:var(--ft);font-size:0.76rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:3px;transition:color 0.2s,background 0.2s;}
+    .nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.06);}
+    .nav-links a.active{color:var(--accent);}
+    .nav-cta{color:var(--white)!important;background:var(--accent)!important;padding:9px 20px!important;font-weight:bold;}
+    .nav-cta:hover{background:var(--accent-bright)!important;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
+    .nav-hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;}
+    .mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(28,30,34,0.99);border-bottom:1px solid var(--border);z-index:199;padding:16px 20px;flex-direction:column;gap:4px;}
+    .mobile-menu a{font-family:var(--ft);font-size:0.86rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:12px 16px;border-radius:4px;display:block;}
+    .mobile-menu a:hover{background:rgba(255,255,255,0.06);color:var(--white);}
+    .mobile-menu a.mob-cta{background:var(--accent);color:var(--white);font-weight:bold;margin-top:8px;text-align:center;}
+    .mobile-menu.open{display:flex;}
+
+    /* ARTICLE HEADER */
+    #ahead{padding:150px 52px 60px;background:var(--bg2);}
+    .ai{max-width:760px;margin:0 auto;}
+    .back-link{font-family:var(--ft);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-bottom:28px;transition:color 0.2s;}
+    .back-link:hover{color:var(--accent);}
+    .ameta{display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap;}
+    .atag{font-family:var(--ft);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;background:rgba(192,57,43,0.12);color:var(--accent);border:1px solid rgba(192,57,43,0.3);padding:4px 11px;border-radius:20px;}
+    .adate{font-family:var(--ft);font-size:0.7rem;letter-spacing:0.08em;color:var(--faint);}
+    h1{font-family:var(--fd);font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.16;color:var(--white);margin-bottom:18px;}
+    .adek{font-family:var(--fm);font-style:italic;font-size:1.1rem;color:var(--muted);line-height:1.7;}
+    .abyline{font-family:var(--ft);font-size:0.72rem;letter-spacing:0.08em;color:var(--faint);margin-top:26px;}
+    .abyline span{color:var(--accent);}
+
+    /* ARTICLE BODY */
+    #abody{padding:64px 52px 40px;}
+    .ac{max-width:760px;margin:0 auto;}
+    .ac p{font-family:var(--fm);font-size:1.06rem;color:var(--off);line-height:1.9;margin-bottom:26px;}
+    .ac h2{font-family:var(--fd);font-size:clamp(1.5rem,2.4vw,2rem);color:var(--white);margin:56px 0 8px;line-height:1.2;}
+    .ac h2 + .dv{margin-bottom:28px;}
+    .dv{width:36px;height:3px;background:var(--accent);}
+    .callout{background:var(--card);border:1.5px solid rgba(192,57,43,0.25);border-left:4px solid var(--accent);border-radius:6px;padding:24px 28px;margin:8px 0 34px;}
+    .callout-lbl{font-family:var(--ft);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+    .callout p{font-family:var(--fd);font-size:1.25rem;color:var(--white);margin:0;line-height:1.4;}
+
+    .steps{display:flex;flex-direction:column;gap:18px;margin-bottom:36px;}
+    .step{display:flex;gap:18px;align-items:flex-start;}
+    .step-num{font-family:var(--fd);font-size:1.6rem;color:var(--accent);min-width:44px;line-height:1;}
+    .step-body{font-family:var(--fm);font-size:1.06rem;color:var(--off);line-height:1.8;padding-top:2px;}
+    .step-body strong{color:var(--white);}
+
+    .ac ul{list-style:none;margin:0 0 30px;padding-left:0;}
+    .ac ul.sub{margin-left:62px;margin-bottom:34px;}
+    .ac li{font-family:var(--fm);font-size:1.02rem;color:var(--muted);padding:9px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.7;}
+    .ac li:last-child{border-bottom:none;}
+    .ac li::before{content:'→';color:var(--accent);font-size:0.85rem;flex-shrink:0;margin-top:2px;}
+
+    .aside{font-family:var(--fm);font-style:italic;color:var(--faint);font-size:0.98rem;border-left:2px solid var(--border);padding-left:18px;margin:0 0 30px;}
+
+    .cta-band{background:var(--card);border:1.5px solid var(--border);border-radius:8px;padding:38px 34px;text-align:center;margin-top:20px;}
+    .cta-band p{font-family:var(--fm);color:var(--muted);margin-bottom:20px;}
+    .btn{font-family:var(--ft);font-size:0.84rem;letter-spacing:0.12em;text-transform:uppercase;padding:14px 30px;border-radius:3px;text-decoration:none;display:inline-block;cursor:pointer;border:none;transition:all 0.2s;background:var(--accent);color:var(--white);font-weight:bold;}
+    .btn:hover{background:var(--accent-bright);transform:translateY(-2px);}
+
+    footer{background:#141618;color:var(--faint);padding:32px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;border-top:1px solid var(--border);margin-top:70px;}
+    .flogo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .flinks{display:flex;gap:20px;list-style:none;flex-wrap:wrap;}
+    .flinks a{font-family:var(--ft);font-size:0.70rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);text-decoration:none;transition:color 0.2s;}
+    .flinks a:hover{color:var(--accent);}
+    .fcopy{font-family:var(--ft);font-size:0.70rem;letter-spacing:0.08em;}
+
+    @media(max-width:960px){
+      nav{padding:0 20px;}
+      .nav-links{display:none;}
+      .nav-hamburger{display:flex;}
+      #ahead{padding:120px 20px 40px;}
+      #abody{padding:40px 20px 20px;}
+      .ac ul.sub{margin-left:0;}
+      footer{flex-direction:column;text-align:center;padding:28px 20px;}
+      .flinks{justify-content:center;}
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="Jamie Barry Music - return to homepage">
+    <img src="guitar_range_logo.png" alt="" role="presentation" style="height:44px;width:44px;object-fit:cover;border-radius:50%;object-position:center center;display:block;border:2px solid var(--accent);" />
+    <span class="nav-logo-text">Jamie Barry <span>Music</span></span>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="index.html#instruments">Instruments</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#online">Online Lessons</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="index.html#book" class="nav-cta">Book a Lesson</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="toggleMenu()" id="hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html#instruments" onclick="closeMenu()">Instruments</a>
+  <a href="index.html#services" onclick="closeMenu()">Services</a>
+  <a href="index.html#faq" onclick="closeMenu()">FAQ</a>
+  <a href="index.html#online" onclick="closeMenu()">Online Lessons</a>
+  <a href="blog.html" onclick="closeMenu()">Blog</a>
+  <a href="index.html#book" onclick="closeMenu()" class="mob-cta">Book a Lesson</a>
+</div>
+
+<main id="main-content">
+<article>
+  <header id="ahead">
+    <div class="ai">
+      <a href="blog.html" class="back-link">← Back to the Blog</a>
+      <div class="ameta">
+        <span class="atag">Guitar</span>
+        <span class="atag">Practice</span>
+        <span class="adate">July 2026</span>
+      </div>
+      <h1>Finding Your Voice in One Chord: A Creative Practice Routine</h1>
+      <p class="adek">A beginner-to-intermediate routine built around a single sound — Esus4 — for players who'd rather stay curious than grit their teeth.</p>
+      <p class="abyline">By <span>Jamie Barry</span> · Jamie Barry Music</p>
+    </div>
+  </header>
+
+  <div id="abody">
+    <div class="ac">
+      <p>Most players want to enjoy their music playing and practice time — I'm willing to bet <em>every</em> player wants that. There's a school of thought that puts practice in the "no pain, no gain" category. If the person in question is aiming to be a professional, or is currently enrolled in music school, there might be a place for that — minus the sharp pain. My mission is to help music players find their own voice on the instrument and make their playing experience more enjoyable.</p>
+      <p>Below is a practice routine for a beginner to intermediate guitarist focused on creativity and musicianship, while still covering the fundamentals.</p>
+
+      <div class="callout">
+        <div class="callout-lbl">Root Inspiration</div>
+        <p>The Esus4 chord — and the sus4 sound in general.</p>
+      </div>
+
+      <h2>The Warm-Up</h2>
+      <div class="dv"></div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body"><strong>Warm up the pick.</strong> Alternate down and up strokes on the open strings of the guitar. Make note of any patterns you might want to incorporate later. <em>(2–5 minutes)</em></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body"><strong>Warm up the fingers.</strong> Walk chromatically up the fretboard using the 1-2-3-4 fingering. Take note of any differences in finger strength day over day. <em>(2–5 minutes)</em></div>
+        </div>
+      </div>
+
+      <h2>The Main Event: Esus4</h2>
+      <div class="dv"></div>
+      <p>This is where the variations start to add up. Each of these takes 1–5 minutes.</p>
+      <ul aria-label="Esus4 practice variations">
+        <li>Strum the chord to get the sound in your head.</li>
+        <li>Slow-motion strum the chord down and then back up — this always reminds me of a harp.</li>
+        <li>Alternate-pick the chord, but keep the same sound as the harp-style pick.</li>
+        <li>Skip strings within the chord to hear what the different intervals sound like in isolation.</li>
+        <li>Find and experiment with different fingerings of the chord. Can open strings be used musically if we temporarily remove a finger? Almost always, yes.</li>
+        <li>Add tempo, either with a metronome, drum machine, or foot tap.</li>
+      </ul>
+      <p>Phew — that was a lot. Shake out those fingers that have been holding down the chord this whole time, if you haven't already.</p>
+      <p>I suspect most people look at this routine and assume it'll sustain them for the full 45 minutes. Not so. I'd be surprised if it takes much more than 6 minutes. The next step is where the time really starts to compound.</p>
+
+      <h2>The Multipliers</h2>
+      <div class="dv"></div>
+      <ul aria-label="Ways to expand the routine">
+        <li>We played Esus4 and ran through our routine — now play Asus4 and redo all the steps above. Prioritize patterns you liked from the previous section and try to reapply them here.</li>
+        <li>Picking and rhythm variations could easily fill the remainder of your practice time on their own.</li>
+        <li>Take a song you like and use this chord as a transition or substitution.</li>
+        <li>Record this chord — or by this time, it's probably a sequence — and improvise over it. This naturally leads you to pick a new practice subject and restart the whole process, inception-style.</li>
+        <li>There are 12 keys. Just saying.</li>
+        <li>Pair this chord with one you learned last week, last month, or last year.</li>
+      </ul>
+
+      <h2>Advanced Practice Room</h2>
+      <div class="dv"></div>
+      <ul aria-label="Advanced practice prompts">
+        <li>How would Hendrix play this chord? Lenny Breau? Frank Zappa? Chopin?</li>
+        <li>Can we tap harmonics over the open strings to extend the chord?</li>
+        <li>If we arpeggiate this sound, how can we weave it into our more traditional playing?</li>
+        <li>Can we sing or hum the tones of this chord?</li>
+        <li>Can we sing or hum tones not in this chord?</li>
+        <li>Can we displace that rhythm we thought up earlier by an eighth note, while counting aloud in 4/4 time?</li>
+      </ul>
+
+      <p>This can get so involved that it's easy to feel overwhelmed. When we know just enough about any subject, we realize how little we actually know. Welcome to the club — hopefully someone brought snacks. Now's a good time to take inventory of the musical journey and remember: the only guarantee is that this pursuit is endless. What a great feature.</p>
+      <p>All the energy you invested in this musical journey today was net positive, and it's now within you forever. Repeat that too.</p>
+      <p class="aside">I'd propose that at the end of each of these practice sessions, we focus on writing down or recording some original material from the session. Learning new material is a gift because it forces us into a beginner's mind. If we're lucky, that gives us moments of creativity that are hard to access otherwise. Maybe that's just me.</p>
+
+      <div class="cta-band">
+        <p>Want a practice routine built around your own playing?</p>
+        <a href="index.html#book" class="btn">Book a Lesson</a>
+      </div>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer role="contentinfo">
+  <a href="index.html" class="flogo" aria-label="Jamie Barry Music - return to homepage">
+    <img src="guitar_range_logo.png" alt="" role="presentation" style="height:40px;width:40px;object-fit:cover;border-radius:50%;object-position:center center;display:block;border:2px solid var(--accent);" />
+    <span style="font-family:var(--fd);font-size:1.05rem;color:var(--white);">Jamie Barry <span style="color:var(--accent);">Music</span></span>
+  </a>
+  <ul class="flinks" role="list">
+    <li><a href="index.html#instruments">Instruments</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="index.html#book">Book a Lesson</a></li>
+  </ul>
+  <span class="fcopy">© 2026 Jamie Barry Music · Erving, MA</span>
+</footer>
+
+<script>
+  function toggleMenu(){
+    const menu=document.getElementById('mobile-menu');
+    const btn=document.getElementById('hamburger');
+    const isOpen=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',isOpen);
+    btn.setAttribute('aria-label',isOpen?'Close navigation menu':'Open navigation menu');
+  }
+  function closeMenu(){
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.getElementById('hamburger').setAttribute('aria-expanded','false');
+  }
+</script>
+</body>
+</html>
