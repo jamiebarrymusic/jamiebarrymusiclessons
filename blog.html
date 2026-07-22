@@ -21,13 +21,14 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{
       --bg:#1c1e22;--bg2:#22252b;--bg3:#282c33;--bg4:#2e323a;--card:#31353e;
-      --border:rgba(255,255,255,0.08);--white:#fff;--off:#e8eaed;--muted:#9aa0ad;--faint:#636b78;
+      --border:rgba(255,255,255,0.08);--white:#fff;--off:#e8eaed;--muted:#9aa0ad;--faint:#9298a4;
       --accent:#c0392b;--accent-bright:#e74c3c;--accent-glow:rgba(192,57,43,0.15);--accent-dim:#922b21;
+      --accent-text:#e8806f;
       --fd:'Special Elite',cursive;--fm:'Courier Prime',monospace;--ft:'Share Tech Mono',monospace;
     }
     html{scroll-behavior:smooth;scroll-padding-top:72px;}
     body{background:var(--bg);color:var(--off);font-family:var(--fm);font-size:19px;line-height:1.75;overflow-x:hidden;}
-    a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:3px;}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--accent-text);outline-offset:3px;border-radius:3px;}
     .skip-link{position:absolute;top:-100px;left:12px;background:var(--accent);color:#fff;padding:10px 20px;font-family:var(--ft);font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;z-index:9999;border-radius:0 0 4px 4px;transition:top 0.2s;}
     .skip-link:focus{top:0;}
 
@@ -35,11 +36,11 @@
     nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:68px;background:rgba(28,30,34,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
     .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
     .nav-logo-text{font-family:var(--fd);font-size:1.2rem;color:var(--white);}
-    .nav-logo-text span{color:var(--accent);}
+    .nav-logo-text span{color:var(--accent-text);}
     .nav-links{display:flex;gap:6px;list-style:none;align-items:center;}
     .nav-links a{font-family:var(--ft);font-size:0.76rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:3px;transition:color 0.2s,background 0.2s;}
     .nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.06);}
-    .nav-links a.active{color:var(--accent);}
+    .nav-links a.active{color:var(--accent-text);}
     .nav-cta{color:var(--white)!important;background:var(--accent)!important;padding:9px 20px!important;font-weight:bold;}
     .nav-cta:hover{background:var(--accent-bright)!important;}
     .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
@@ -53,7 +54,7 @@
     /* SHARED */
     .sec{padding:90px 52px;}
     .si{max-width:1100px;margin:0 auto;}
-    .sl{font-family:var(--ft);font-size:0.74rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+    .sl{font-family:var(--ft);font-size:0.74rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-text);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
     .sl::before{content:'//';opacity:0.4;}
     h1,h2{font-family:var(--fd);color:var(--white);line-height:1.12;}
     h1{font-size:clamp(2.4rem,4.2vw,3.8rem);margin-bottom:16px;}
@@ -68,11 +69,11 @@
     .pcard{background:var(--card);border:1.5px solid var(--border);border-radius:8px;padding:36px 34px;text-decoration:none;display:block;transition:border-color 0.25s,transform 0.2s,box-shadow 0.2s;}
     .pcard:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 44px rgba(0,0,0,0.35);}
     .pmeta{display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap;}
-    .ptag2{font-family:var(--ft);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;background:rgba(192,57,43,0.12);color:var(--accent);border:1px solid rgba(192,57,43,0.3);padding:4px 11px;border-radius:20px;}
-    .pdate{font-family:var(--ft);font-size:0.7rem;letter-spacing:0.08em;color:var(--faint);}
+    .ptag2{font-family:var(--ft);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;background:rgba(192,57,43,0.12);color:var(--accent-text);border:1px solid rgba(192,57,43,0.3);padding:4px 11px;border-radius:20px;}
+    .pdate{font-family:var(--ft);font-size:0.7rem;letter-spacing:0.08em;color:var(--muted);}
     .ptitle{font-family:var(--fd);font-size:1.6rem;color:var(--white);margin-bottom:10px;line-height:1.25;}
     .pexcerpt{font-family:var(--fm);font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:14px;}
-    .pcta{font-family:var(--ft);font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:6px;}
+    .pcta{font-family:var(--ft);font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-text);display:flex;align-items:center;gap:6px;}
     .pcta::after{content:'→';transition:transform 0.2s;}
     .pcard:hover .pcta::after{transform:translateX(5px);}
     .soon{border-style:dashed;opacity:0.55;}
@@ -82,7 +83,7 @@
     .flogo{display:flex;align-items:center;gap:12px;text-decoration:none;}
     .flinks{display:flex;gap:20px;list-style:none;flex-wrap:wrap;}
     .flinks a{font-family:var(--ft);font-size:0.70rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);text-decoration:none;transition:color 0.2s;}
-    .flinks a:hover{color:var(--accent);}
+    .flinks a:hover{color:var(--accent-text);}
     .fcopy{font-family:var(--ft);font-size:0.70rem;letter-spacing:0.08em;}
 
     @media(max-width:960px){
@@ -162,7 +163,7 @@
 <footer role="contentinfo">
   <a href="index.html" class="flogo" aria-label="Jamie Barry Music - return to homepage">
     <img src="guitar_range_logo.png" alt="" role="presentation" style="height:40px;width:40px;object-fit:cover;border-radius:50%;object-position:center center;display:block;border:2px solid var(--accent);" />
-    <span style="font-family:var(--fd);font-size:1.05rem;color:var(--white);">Jamie Barry <span style="color:var(--accent);">Music</span></span>
+    <span style="font-family:var(--fd);font-size:1.05rem;color:var(--white);">Jamie Barry <span style="color:var(--accent-text);">Music</span></span>
   </a>
   <ul class="flinks" role="list">
     <li><a href="index.html#instruments">Instruments</a></li>
