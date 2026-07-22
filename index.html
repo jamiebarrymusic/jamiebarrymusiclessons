@@ -119,6 +119,16 @@
     .icta::after{content:'→';transition:transform 0.2s;}
     .icard:hover .icta::after{transform:translateX(5px);}
 
+    /* START HERE — BLOG CALLOUT */
+    .start-here{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+    .start-here-link{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;max-width:1100px;margin:0 auto;padding:22px 52px;text-decoration:none;transition:background 0.2s;}
+    .start-here-link:hover{background:rgba(77,116,176,0.06);}
+    .start-here-link:hover .start-here-arrow{transform:translateX(5px);}
+    .start-here-label{font-family:var(--ft);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);flex-shrink:0;}
+    .start-here-title{font-family:var(--fm);font-size:1rem;color:var(--off);display:flex;align-items:center;gap:8px;}
+    .start-here-arrow{color:var(--accent);transition:transform 0.2s;display:inline-block;}
+    @media(max-width:640px){.start-here-link{padding:20px 20px;text-align:center;}}
+
     /* SERVICES */
     #services{background:var(--bg2);}
     .rate-banner{background:var(--accent);color:var(--white);padding:28px 52px;text-align:center;margin-bottom:56px;border-radius:6px;}
@@ -301,6 +311,7 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#online">Online Lessons</a></li>
     <li><a href="#band">Jamie's Band Projects</a></li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="#videos">Videos</a></li>
     <li><a href="#book-instant">Book Instantly</a></li>
     <li class="nav-social-divider" aria-hidden="true"></li>
@@ -326,6 +337,7 @@
   <a href="#faq" onclick="closeMenu()">FAQ</a>
   <a href="#online" onclick="closeMenu()">Online Lessons</a>
   <a href="#band" onclick="closeMenu()">Jamie's Band Projects</a>
+  <a href="blog.html" onclick="closeMenu()">Blog</a>
   <a href="#videos" onclick="closeMenu()">Videos</a>
   <a href="#book-instant" onclick="closeMenu()">Book Instantly</a>
   <div style="display:flex;gap:12px;padding:10px 16px;">
@@ -365,6 +377,14 @@
     <div class="hero-label">Jamie Barry Music · Erving, MA</div>
   </div>
 </section>
+
+<!-- START HERE — BLOG CALLOUT -->
+<div class="start-here reveal">
+  <a href="creative-practice-esus4.html" class="start-here-link" aria-label="Read the blog post: Finding Your Voice in One Chord — A Creative Practice Routine">
+    <span class="start-here-label" aria-hidden="true">// From the Blog</span>
+    <span class="start-here-title">"Finding Your Voice in One Chord: A Creative Practice Routine" <span class="start-here-arrow" aria-hidden="true">→</span></span>
+  </a>
+</div>
 
 <!-- SERVICES -->
 <section id="services" class="sec" aria-labelledby="services-heading" style="background:var(--bg2);">
@@ -771,6 +791,7 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#online">Online Lessons</a></li>
     <li><a href="#band">Jamie's Band Projects</a></li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="#videos">Videos</a></li>
     <li><a href="#newsletter">Newsletter</a></li>
     <li><a href="#book">Book a Lesson</a></li>
